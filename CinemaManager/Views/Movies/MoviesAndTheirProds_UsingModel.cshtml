@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CinemaManager.Models.Cinema.ProdMovie>
+
+@{
+    ViewData["Title"] = "MoviesAndTheirProds";
+}
+
+<h1>MoviesAndTheirProds</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                MovieTitle
+            </th>
+            <th>
+                MovieGenre
+            </th>
+            <th>
+                ProduceName
+            </th>
+            <th>
+                ProduceNationality
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mGenre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pNat)
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
